@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWEAKS - Premium PG Services</title>
+    <link rel="icon" type="image/png" href="tweaks.png"> 
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="tweaks_logo.jpeg" alt="Tweaks Logo">
+            <h1>TWEAKS</h1>
+        </div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="sem1.html">SEM 1</a></li>
+                <li><a href="sem2.html">SEM 2</a></li>
+                <li><a href="sem3.html">SEM 3</a></li>
+                <li><a href="sem4.html">SEM 4</a></li>
+                <li><a href="sem5.html">SEM 5</a></li>
+                <li><a href="sem6.html">SEM 6</a></li>
+                <li><a href="sem7.html">SEM 7</a></li>
+                <li><a href="sem8.html">SEM 8</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <i class='bx bx-menu'></i>
+        </div>
+    </header>
+
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="sem1.html">SEM 1</a></li>
+            <li><a href="sem2.html">SEM 2</a></li>
+            <li><a href="sem3.html">SEM 3</a></li>
+            <li><a href="sem4.html">SEM 4</a></li>
+            <li><a href="sem5.html">SEM 5</a></li>
+            <li><a href="sem6.html">SEM 6</a></li>
+            <li><a href="sem7.html">SEM 7</a></li>
+            <li><a href="sem8.html">SEM 8</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown('bca-dropdown')">BCA</button>
+            <div id="bca-dropdown" class="dropdown-content">
+                <a href="alert.html" target="_blank">Semester 1</a>
+                <a href="alert.html" target="_blank">Semester 2</a>
+                <a href="alert.html" target="_blank">Semester 3</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown('btech-dropdown')">BTech</button>
+            <div id="btech-dropdown" class="dropdown-content">
+                <a href="alert.html" target="_blank">CSE</a>
+                <a href="alert.html" target="_blank">ECE</a>
+                <a href="alert.html" target="_blank">Mechanical</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown('bsc-dropdown')">BSc</button>
+            <div id="bsc-dropdown" class="dropdown-content">
+                <a href="alert.html" target="_blank">Physics</a>
+                <a href="alert.html" target="_blank">Chemistry</a>
+                <a href="alert.html" target="_blank">Mathematics</a>
+            </div>
+        </div>+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>TWEAKS</h2>
+                <div style="font-size: 20px;">
+                    <a href="https://www.instagram.com/amalsonu_/?next=%2F"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/918921746693"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://www.youtube.com/@TWEAKS-l9y2n"><i class='bx bxl-youtube'></i></a>
+                    <a href="https://x.com/TWEAKS2025"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/in/amal-sonu-09298a320/"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+            <div class="footer-links" style="font-size: 20px;">
+                <a href="index.html"><i class='bx bx-home-alt-2'></i> </a>
+                <a href="about.html"><i class='bx bxs-user'></i> </a>
+                <a href="services.html"><i class='bx bx-laptop'></i> </a>
+                <a href="contact.html"><i class='bx bx-headphone'></i> </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 TWEAKS. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Toggle dropdown visibility when button is clicked
+        function toggleDropdown(dropdownId) {
+            // Close all other dropdowns first
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.id !== dropdownId && openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+            
+            // Toggle the selected dropdown
+            document.getElementById(dropdownId).classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
